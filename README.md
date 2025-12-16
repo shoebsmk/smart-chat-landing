@@ -129,6 +129,9 @@ This is a static website that can be deployed to any static hosting service:
 - watch demo, 
 - donate now on the app, 
 - verify email in mail does not take back to app
+- Chat list should only have relavent user
+- Make try button bigger
+- Add free to talk ai button
 - make the sign up button larger, ask user to check email after sign up and verify
 
 ## License
