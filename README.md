@@ -70,7 +70,7 @@ smart-chat-landing/
 ├── styles.css           # All styling and responsive design
 ├── script.js            # Interactive features and animations
 ├── images/              # Image assets
-│   └── Profile Pic.jpeg # Founder profile picture
+│   └── profile-pic.jpeg # Founder profile picture
 ├── screenshots/         # App screenshot gallery images
 └── README.md            # Project documentation
 ```
