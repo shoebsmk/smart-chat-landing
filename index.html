@@ -60,16 +60,16 @@
                                 <h2>Messages</h2>
                                 <span class="header-icon">⚙</span>
                             </div>
-                            <div class="phone-email">shoebsmk@gmail.com</div>
+                            <div class="phone-email">user@example.com</div>
                             <div class="phone-search">
-                                <input type="text" placeholder="Search conversations..." readonly>
+                                <input type="text" placeholder="Search conversations..." readonly aria-label="Search conversations">
                             </div>
                             <div class="phone-chat-list">
                                 <div class="chat-item">
                                     <div class="chat-avatar blue">S</div>
                                     <div class="chat-info">
                                         <div class="chat-name-row">
-                                            <span class="chat-name">shoebkhana</span>
+                                            <span class="chat-name">shoeb</span>
                                             <span class="chat-time">moment ago</span>
                                         </div>
                                         <div class="chat-message-row">
@@ -79,10 +79,10 @@
                                     </div>
                                 </div>
                                 <div class="chat-item">
-                                    <div class="chat-avatar purple">D</div>
+                                    <div class="chat-avatar purple">A</div>
                                     <div class="chat-info">
                                         <div class="chat-name-row">
-                                            <span class="chat-name">dohysosy</span>
+                                            <span class="chat-name">Aamir</span>
                                             <span class="chat-time">about an hour ago</span>
                                         </div>
                                         <div class="chat-message-row">
@@ -91,10 +91,10 @@
                                     </div>
                                 </div>
                                 <div class="chat-item">
-                                    <div class="chat-avatar blue">L</div>
+                                    <div class="chat-avatar blue">Y</div>
                                     <div class="chat-info">
                                         <div class="chat-name-row">
-                                            <span class="chat-name">lozygu</span>
+                                            <span class="chat-name">Yaseen</span>
                                             <span class="chat-time">3 hours ago</span>
                                         </div>
                                         <div class="chat-message-row">
@@ -133,7 +133,7 @@
     </section>
 
     <!-- Chat Assist Section -->
-    <section class="chat-assist">
+    <section id="chat-assist" class="chat-assist">
         <div class="container">
             <div class="chat-assist-content">
                 <div class="chat-assist-text">
@@ -201,10 +201,111 @@
                                 <div class="example-item">Tell Ahmed Meeting cancelled</div>
                             </div>
                             <div class="command-input">
-                                <input type="text" placeholder="Type your command..." readonly>
-                                <button class="send-button">
+                                <input type="text" placeholder="Type your command..." readonly aria-label="Type your command">
+                                <button class="send-button" aria-label="Send message">
                                     <i data-lucide="send"></i>
                                 </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         IMAGE CAROUSEL SECTION
+         Screenshots showcase with navigation
+         ============================================ -->
+    <section class="carousel-section" aria-label="Screenshots carousel">
+        <div class="container">
+            <div class="carousel-header">
+                <div class="carousel-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" class="lucide lucide-sparkles badge-icon">
+                        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                        <path d="M20 2v4"></path>
+                        <path d="M22 4h-4"></path>
+                        <circle cx="4" cy="20" r="2"></circle>
+                    </svg>
+                    <span>App Showcase</span>
+                </div>
+                <h2 class="section-title">Experience SmartChat</h2>
+                <p class="section-subtitle">Discover the features that make messaging effortless and delightful</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-wrapper scrolled-right scrolled-left" id="carousel-wrapper">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Carousel items will be dynamically generated from screenshots folder -->
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/01-auth-signup.png" alt="User Registration - Sign up screen showing email, password, and username input fields" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">Get Started in Seconds</h3>
+                                    <p class="carousel-subtitle">Simple, secure signup</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/04-unread-badges.png" alt="Unread Message Tracking - Chat list showing unread message badges" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">Never Miss a Message</h3>
+                                    <p class="carousel-subtitle">Stay on top of conversations</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/07-typing-indicator.png" alt="Typing Indicators - Chat screen showing typing indicator when user is composing" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">Real-Time Conversations</h3>
+                                    <p class="carousel-subtitle">See when friends are typing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/11-image-message.png" alt="Image Sharing - Chat screen displaying an image message in a message bubble" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">Share Moments Instantly</h3>
+                                    <p class="carousel-subtitle">Photos, videos, and more</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/12-contact-profile.png" alt="Contact Information - Contact profile screen showing user avatar, username, and bio" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">Stay Connected</h3>
+                                    <p class="carousel-subtitle">Rich contact profiles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/13-profile-edit.png" alt="Profile Customization - Profile editing screen with fields for username, bio, and profile picture" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">Make It Yours</h3>
+                                    <p class="carousel-subtitle">Customize your profile</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/20-chat-assist-command.png" alt="Natural Language Input - Chat Assist screen showing a typed natural language command" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">AI-Powered Messaging</h3>
+                                    <p class="carousel-subtitle">Send messages with natural language</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-image-container">
+                                <img src="screenshots/22-chat-assist-success.png" alt="AI Message Success - Chat Assist screen showing success message confirming message was sent" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <h3 class="carousel-title">Send with One Command</h3>
+                                    <p class="carousel-subtitle">AI handles the rest</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,6 +422,84 @@
         </div>
     </section>
 
+    <!-- Privacy/Security Section -->
+    <section id="security" class="privacy-security">
+        <div class="container">
+            <div class="privacy-badge">
+                <i data-lucide="shield-check" class="privacy-badge-icon"></i>
+                <span>Bank-Level Security</span>
+            </div>
+            <h2 class="privacy-title">Your Privacy is Sacred</h2>
+            <p class="privacy-subtitle">We take security seriously. Your data is encrypted, protected, and always under your control.</p>
+            <div class="privacy-grid">
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>End-to-end encryption for all messages</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>Row Level Security (RLS) database protection</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>AI only processes command intent—never message content</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>Secure JWT token authentication</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>No third-party data sharing</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>User confirmation required for all AI actions</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>GDPR & privacy law compliant</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>Regular security audits</p>
+                </div>
+                <div class="privacy-card">
+                    <span class="privacy-check">✓</span>
+                    <p>Open-source transparency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section (Purple Gradient) -->
+    <section class="cta-purple">
+        <div class="container">
+            <div class="cta-purple-content">
+                <h2 class="cta-purple-title">Ready to Message Smarter?</h2>
+                <p class="cta-purple-tagline">Join the messaging revolution. Send messages in seconds, not minutes.</p>
+                <div class="cta-buttons">
+                    <a href="#cta" class="btn btn-primary-white">Try SmartChat Free <span class="arrow">→</span></a>
+                    <a href="#features" class="btn btn-secondary-purple">Watch Demo Video</a>
+                </div>
+                <div class="cta-purple-features">
+                    <div class="cta-feature-check">
+                        <span class="check-icon">✓</span>
+                        <span>No credit card required</span>
+                    </div>
+                    <div class="cta-feature-check">
+                        <span class="check-icon">✓</span>
+                        <span>Free forever plan</span>
+                    </div>
+                    <div class="cta-feature-check">
+                        <span class="check-icon">✓</span>
+                        <span>Cancel anytime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call-to-Action Section -->
     <section id="cta" class="cta">
         <div class="container">
@@ -338,17 +517,53 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-gradient-line"></div>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">Smart Chat</div>
-                <div class="footer-links">
-                    <a href="#features">Features</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                <div class="footer-column footer-brand-column">
+                    <div class="footer-brand">SmartChat</div>
+                    <p class="footer-description">AI-powered real-time messaging that lets you send messages at the speed of thought. No more tedious navigation—just natural language commands.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Social media">
+                            <i data-lucide="message-circle"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Email">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#chat-assist">Chat Assist</a></li>
+                        <li><a href="#security">Security</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                    </ul>
                 </div>
             </div>
-            <p class="footer-copyright">&copy; 2024 Smart Chat. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 SmartChat. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
 

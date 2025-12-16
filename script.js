@@ -2,13 +2,16 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
@@ -17,32 +20,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
-    
-    lastScroll = currentScroll;
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
+        } else {
+            navbar.style.boxShadow = 'none';
+        }
+        
+        lastScroll = currentScroll;
+    });
+}
 
 // Form submission handler
 const signupForm = document.getElementById('signup-form');
 if (signupForm) {
     signupForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        const email = this.querySelector('input[type="email"]').value;
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
         
-        // Simple validation
-        if (email && email.includes('@')) {
+        // Better email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && emailRegex.test(email)) {
             // Here you would typically send the data to a server
             alert('Thank you! We\'ll be in touch soon.');
             this.reset();
         } else {
             alert('Please enter a valid email address.');
+            emailInput.focus();
         }
     });
 }
@@ -64,7 +72,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe feature cards and pricing cards
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.feature-card, .pricing-card');
+    const animatedElements = document.querySelectorAll('.everything-card, .pricing-card');
     
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
@@ -110,5 +118,155 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
+});
+
+// ============================================
+// CAROUSEL FUNCTIONALITY
+// Scroll detection, smooth scrolling, and accessibility
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselWrapper = document.getElementById('carousel-wrapper');
+    const carouselTrack = document.getElementById('carousel-track');
+    
+    if (!carouselWrapper || !carouselTrack) return;
+    
+    // Function to update scroll indicators
+    const updateScrollIndicators = () => {
+        const scrollLeft = carouselWrapper.scrollLeft;
+        const scrollWidth = carouselWrapper.scrollWidth;
+        const clientWidth = carouselWrapper.clientWidth;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        // Update classes based on scroll position
+        if (scrollLeft <= 5) {
+            carouselWrapper.classList.add('scrolled-left');
+            carouselWrapper.classList.remove('scrolled-right');
+        } else if (scrollLeft >= maxScroll - 5) {
+            carouselWrapper.classList.add('scrolled-right');
+            carouselWrapper.classList.remove('scrolled-left');
+        } else {
+            carouselWrapper.classList.remove('scrolled-left');
+            carouselWrapper.classList.remove('scrolled-right');
+        }
+    };
+    
+    // Initial check
+    updateScrollIndicators();
+    
+    // Update on scroll
+    let scrollTimeout;
+    carouselWrapper.addEventListener('scroll', () => {
+        // Debounce scroll events for better performance
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateScrollIndicators, 10);
+    });
+    
+    // Update on resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateScrollIndicators, 100);
+    });
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isScrolling = false;
+    
+    carouselWrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        isScrolling = false;
+    }, { passive: true });
+    
+    carouselWrapper.addEventListener('touchmove', () => {
+        isScrolling = true;
+    }, { passive: true });
+    
+    carouselWrapper.addEventListener('touchend', (e) => {
+        if (!isScrolling) return;
+        touchEndX = e.changedTouches[0].screenX;
+        updateScrollIndicators();
+    }, { passive: true });
+    
+    // Keyboard navigation support
+    carouselWrapper.setAttribute('tabindex', '0');
+    carouselWrapper.setAttribute('role', 'region');
+    carouselWrapper.setAttribute('aria-label', 'Screenshots carousel');
+    
+    carouselWrapper.addEventListener('keydown', (e) => {
+        const scrollAmount = 320; // Width of one carousel item + gap
+        
+        switch(e.key) {
+            case 'ArrowLeft':
+                e.preventDefault();
+                carouselWrapper.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+                break;
+            case 'ArrowRight':
+                e.preventDefault();
+                carouselWrapper.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                break;
+            case 'Home':
+                e.preventDefault();
+                carouselWrapper.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+                break;
+            case 'End':
+                e.preventDefault();
+                carouselWrapper.scrollTo({
+                    left: carouselWrapper.scrollWidth,
+                    behavior: 'smooth'
+                });
+                break;
+        }
+        
+        // Update indicators after keyboard navigation
+        setTimeout(updateScrollIndicators, 300);
+    });
+    
+    // Smooth scroll on carousel item click (optional enhancement)
+    const carouselItems = carouselTrack.querySelectorAll('.carousel-item');
+    carouselItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            const itemWidth = item.offsetWidth;
+            const gap = 24; // 1.5rem gap
+            const scrollPosition = index * (itemWidth + gap);
+            
+            carouselWrapper.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    // Intersection Observer for carousel items animation
+    const carouselObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 50);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observe carousel items for fade-in animation
+    carouselItems.forEach((item) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        carouselObserver.observe(item);
+    });
 });
 
