@@ -30,3 +30,28 @@ It’s free. It’s fast.
 And honestly? Messaging finally makes sense.
 
 ✅ Try SmartChat. Your future self will thank you.
+
+
+
+Here's a detailed text prompt you can provide to an AI storyboarding tool to convert your script into scene‑by‑scene images. The guidelines are drawn from best practices in AI storyboarding and prompt writing—such as breaking down scripts into visual elements, including detailed descriptions of subject, action, setting, mood and style, and ensuring each image prompt stands alone with clear details like colours and textures. It also incorporates the idea of writing prompts from the perspective of a cinematic art director to capture mood, lighting and camera perspective while maintaining consistent characters and style across scenes.
+
+---
+
+### Prompt to Generate Scene‑by‑Scene Images from Your Script
+
+> **Role & Task:** Act as a professional cinematic storyboard artist. Carefully read the following script for a 45–60‑second ad and break it into a series of concise, chronological scenes.
+> **Scene Breakdown:** For each scene:
+>
+> 1. **Scene Summary:** Write a one‑sentence summary capturing the key moment and emotion of that part of the script.
+> 2. **Detailed Image Prompt:** Create a vivid still‑image prompt that covers:
+>
+>    * **Main subject(s):** Who/what is central in the frame (appearance, clothing, expression).
+>    * **Action:** What is happening at that moment.
+>    * **Scene & Environment:** Where it takes place (setting, background objects).
+>    * **Lighting & Mood:** Describe lighting (warm morning light, coffee‑shop glow, etc.) and the emotional tone. Include colours and textures to enhance clarity.
+>    * **Camera Perspective:** Suggest angle or movement (e.g., close‑up, over‑the‑shoulder, tracking shot).
+>    * **Artistic Style:** Keep a cohesive style across scenes—e.g., cinematic, realistic, friendly—by reusing key phrases or visual motifs.
+> 3. **Consistency Notes:** Ensure the same actors/characters look consistent across scenes and reference any recurring props (phone, coffee cup, SmartChat app).
+>    **Format:** Present your output as a numbered list of scenes. Each entry should include the scene summary followed by its detailed image prompt. Do not repeat the original script in your output.
+>    **Script for Storyboarding:**
+>    “Last week, I’m late to a coffee meeting—juggling keys, phone, and coffee. Total chaos. I’m trying to text my friend, scrolling through a sea of contacts I haven’t touched in years. Finally find her. Start typing. And I think: ‘There’s gotta be a better way.’ 👉 Meet SmartChat. Now I just say: ‘Send Lisa I’m running five minutes late.’ The AI gets it. Finds Lisa. Writes the message. One tap. Done. Three seconds instead of three minutes. No commands. No learning curve. Just talk like a normal human: ‘Tell Marcus I’ll call him later.’ ‘Message the team the meeting’s at 4.’ And yeah—it doesn’t read your chats. Just the command. Your privacy stays private. I’ve used it for two weeks. It’s free. It’s fast. And honestly? Messaging finally makes sense. Try SmartChat. Your future self will thank you.”
