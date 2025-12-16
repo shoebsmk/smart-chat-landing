@@ -124,6 +124,13 @@ This is a static website that can be deployed to any static hosting service:
 - **AWS S3**: Upload files to an S3 bucket configured for static website hosting
 - **Any web server**: Simply upload the files to your web server
 
+## Feedback
+- Buttons not working: 
+- watch demo, 
+- donate now on the app, 
+- verify email in mail does not take back to app
+- make the sign up button larger, ask user to check email after sign up and verify
+
 ## License
 
 This project is open source and available for personal and commercial use.

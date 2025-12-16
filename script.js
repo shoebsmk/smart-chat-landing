@@ -80,6 +80,85 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
         observer.observe(el);
     });
+
+    // Chat Assist section animations
+    const chatAssistText = document.querySelector('.chat-assist-text');
+    const chatAssistVisual = document.querySelector('.chat-assist-visual');
+    
+    if (chatAssistText) {
+        chatAssistText.style.opacity = '0';
+        chatAssistText.style.transform = 'translateY(20px)';
+        chatAssistText.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(chatAssistText);
+    }
+    
+    if (chatAssistVisual) {
+        chatAssistVisual.style.opacity = '0';
+        chatAssistVisual.style.transform = 'translateY(20px)';
+        chatAssistVisual.style.transition = 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s';
+        observer.observe(chatAssistVisual);
+    }
+
+    // Stats section animations with staggered delays
+    const statCards = document.querySelectorAll('.stat-card');
+    statCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // Privacy/Security section animations
+    const privacyBadge = document.querySelector('.privacy-badge');
+    const privacyTitle = document.querySelector('.privacy-title');
+    const privacySubtitle = document.querySelector('.privacy-subtitle');
+    const privacyCards = document.querySelectorAll('.privacy-card');
+    
+    if (privacyBadge) {
+        privacyBadge.style.opacity = '0';
+        privacyBadge.style.transform = 'translateY(20px)';
+        privacyBadge.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(privacyBadge);
+    }
+    
+    if (privacyTitle) {
+        privacyTitle.style.opacity = '0';
+        privacyTitle.style.transform = 'translateY(20px)';
+        privacyTitle.style.transition = 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s';
+        observer.observe(privacyTitle);
+    }
+    
+    if (privacySubtitle) {
+        privacySubtitle.style.opacity = '0';
+        privacySubtitle.style.transform = 'translateY(20px)';
+        privacySubtitle.style.transition = 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s';
+        observer.observe(privacySubtitle);
+    }
+    
+    privacyCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s ease-out ${0.3 + index * 0.1}s, transform 0.6s ease-out ${0.3 + index * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // CTA Purple section animations
+    const ctaPurpleContent = document.querySelector('.cta-purple-content');
+    if (ctaPurpleContent) {
+        ctaPurpleContent.style.opacity = '0';
+        ctaPurpleContent.style.transform = 'translateY(20px)';
+        ctaPurpleContent.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(ctaPurpleContent);
+    }
+
+    // CTA section animations
+    const ctaContent = document.querySelector('.cta-content');
+    if (ctaContent) {
+        ctaContent.style.opacity = '0';
+        ctaContent.style.transform = 'translateY(20px)';
+        ctaContent.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(ctaContent);
+    }
 });
 
 // Add active state to navigation links on scroll
@@ -268,5 +347,35 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         carouselObserver.observe(item);
     });
+
+    // ============================================
+    // TESTIMONIALS SECTION ANIMATIONS
+    // Fade-in animation for testimonial cards
+    // ============================================
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    
+    if (testimonialCards.length > 0) {
+        const testimonialObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Observe testimonial cards for fade-in animation
+        testimonialCards.forEach((card) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            testimonialObserver.observe(card);
+        });
+    }
 });
 
