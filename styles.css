@@ -1736,6 +1736,12 @@ section {
         font-size: 0.9rem;
     }
 
+    /* Hide Features and Pricing links on narrow screens */
+    .nav-links li:first-child,
+    .nav-links li:nth-child(2) {
+        display: none;
+    }
+
     .btn-nav {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
