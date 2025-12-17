@@ -1483,6 +1483,34 @@ section {
     letter-spacing: -0.02em;
 }
 
+.founder-badge-link,
+.founder-name-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.founder-badge-link {
+    display: inline-block;
+}
+
+.founder-name-link {
+    display: block;
+}
+
+.founder-badge-link:hover,
+.founder-name-link:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.founder-badge-link:hover .founder-badge,
+.founder-name-link:hover .founder-name {
+    opacity: 0.9;
+}
+
 .founder-title {
     font-size: 1.5rem;
     font-weight: 600;
@@ -1926,6 +1954,24 @@ section {
         text-align: center;
     }
 
+    .founder-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .founder-badge-link {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+    }
+
+    .founder-name-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
     .founder-image-frame {
         max-width: 350px;
         margin: 0 auto;
@@ -1933,6 +1979,7 @@ section {
 
     .founder-name {
         font-size: 2.5rem;
+        text-align: center;
     }
 
     .founder-title {
@@ -2058,12 +2105,31 @@ section {
         padding: 4rem 0;
     }
 
+    .founder-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .founder-badge-link {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+    }
+
+    .founder-name-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
     .founder-image-frame {
         max-width: 280px;
     }
 
     .founder-name {
         font-size: 2rem;
+        text-align: center;
     }
 
     .founder-title {
