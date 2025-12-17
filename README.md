@@ -133,6 +133,7 @@ This is a static website that can be deployed to any static hosting service:
 - Make try button bigger
 - Add free to talk ai button
 - make the sign up button larger, ask user to check email after sign up and verify
+- Change name from chat Assist to smartchat
 
 ## License
 
